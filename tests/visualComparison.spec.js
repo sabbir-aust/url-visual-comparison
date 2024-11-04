@@ -15,8 +15,8 @@ test.describe('Visual comparison between dev and prod URLs', () => {
   });
 
   rows.forEach((row, index) => {
-    const devUrl = row.devUrls;
-    const prodUrl = row.prodUrls;
+    const devUrl = row.testUrls;
+    const prodUrl = row.mainUrls;
 
     test(`Compare ${devUrl} with corresponding prod URL`, async () => {
       if (!prodUrl) {

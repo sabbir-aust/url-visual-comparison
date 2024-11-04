@@ -18,8 +18,8 @@ class VisualComparisonPage {
   async compareScreenshots(devUrl, prodUrl, index) {
     const sanitizedDevUrl = ComparisonHelper.sanitizeUrl(devUrl);
     const sanitizedProdUrl = ComparisonHelper.sanitizeUrl(prodUrl);
-    const screenshotPathDev = `screenshots/visualComparison/dev/dev_${sanitizedDevUrl}_${index}.png`;
-    const screenshotPathProd = `screenshots/visualComparison/prod/prod_${sanitizedProdUrl}_${index}.png`;
+    const screenshotPathDev = `screenshots/visualComparison/test/test_${sanitizedDevUrl}_${index}.png`;
+    const screenshotPathProd = `screenshots/visualComparison/main/main_${sanitizedProdUrl}_${index}.png`;
     const screenshotDiffPath = `screenshots/visualComparison/diff/diff_${sanitizedDevUrl}_vs_${sanitizedProdUrl}_${index}.png`;
 
     const img1 = await this.takeScreenshot(devUrl, screenshotPathDev);
