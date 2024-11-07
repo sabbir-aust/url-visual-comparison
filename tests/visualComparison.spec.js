@@ -6,7 +6,7 @@ const VisualComparisonPage = require('../src/visualComparisonPage');
 const urlsFilePath = path.join(__dirname, '../urls.xlsx');
 const rows = require('../src/excelHelper').readExcelFile(urlsFilePath);
 
-test.describe('Visual comparison between dev and prod URLs', () => {
+test.describe('Visual comparison between test and main URLs', () => {
   const comparisonResults = [];
   let visualComparison; // Declare the variable here
 

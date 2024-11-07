@@ -9,9 +9,10 @@ class VisualComparisonPage {
 
   async takeScreenshot(url, screenshotPath) {
     await this.page.goto(url);
-    await this.page.waitForTimeout(5000); // Adjust as necessary
+    await this.page.waitForTimeout(8000); // Adjust as necessary
     const screenshot = await this.page.screenshot({ fullPage: true });
     fs.writeFileSync(screenshotPath, screenshot); // Save the screenshot
+    await this.page.waitForTimeout(2000);
     return PNG.sync.read(fs.readFileSync(screenshotPath)); // Read the saved screenshot
   }
 
