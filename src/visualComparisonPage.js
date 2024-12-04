@@ -7,12 +7,31 @@ class VisualComparisonPage {
     this.page = page;
   }
 
+  async performLogin(email, password) {
+    const emailSelector = '//input[@type="text" and contains(@id, "username")]'; // Replace with the actual selector for the email input field
+    const passwordSelector = '//input[@type="password" and contains(@id, "password")]'; // Replace with the actual selector for the password input field
+    const loginButtonSelector = '//input[@type="submit" and contains(@id, "loginbtn")]'; // Replace with the actual selector for the login button
+
+    if (await this.page.isVisible(emailSelector)) {
+      console.log('Login page detected, performing login...');
+      await this.page.fill(emailSelector, email);
+      await this.page.fill(passwordSelector, password);
+      await this.page.click(loginButtonSelector);
+      await this.page.waitForNavigation(); // Wait for the next page to load
+    } else {
+      console.log('Login page not detected, skipping login...');
+    }
+  }
+
   async takeScreenshot(url, screenshotPath) {
     await this.page.goto(url);
-    await this.page.waitForTimeout(8000); // Adjust as necessary
+    await this.page.waitForTimeout(2000); // Adjust as necessary
+    // Call the login function
+    await this.performLogin('akash.ru.37@gmail.com', 'Cse123455@');
+    await this.page.waitForTimeout(5000); // Additional wait if necessary
     const screenshot = await this.page.screenshot({ fullPage: true });
     fs.writeFileSync(screenshotPath, screenshot); // Save the screenshot
-    await this.page.waitForTimeout(2000);
+    await this.page.waitForTimeout(3000);
     return PNG.sync.read(fs.readFileSync(screenshotPath)); // Read the saved screenshot
   }
 
