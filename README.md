@@ -3,7 +3,6 @@
 This guide provides instructions for setting up the project environment with Node.js, Visual Studio Code, and Playwright.
 
 ## Prerequisites
-    - Ensure you have access to the Software Center inside your VM.
     - Prepare the URLs inside the "urls.xlsx" file after pulling the code from the git command
 
 ## Step-by-Step Setup Instructions
