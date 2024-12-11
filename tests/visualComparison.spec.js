@@ -39,3 +39,4 @@ test.describe('Visual comparison between test and main URLs', () => {
     await ComparisonHelper.writeResultsToExcel(excelFilePath, comparisonResults);
   });
 });
+//

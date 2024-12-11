@@ -6,7 +6,7 @@ class ComparisonHelper {
   static sanitizeUrl(url) {
     return url.replace(/https?:\/\//, '').replace(/[^a-zA-Z0-9]/g, '_');
   }
-
+//
   static cropImage(img, newHeight) {
     const cropped = new PNG({ width: img.width, height: newHeight });
     for (let y = 0; y < newHeight; y++) {

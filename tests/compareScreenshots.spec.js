@@ -49,3 +49,4 @@ test.describe('Compare screenshots', () => {
     console.log('Comparison Results:', comparisonResults);
   });
 });
+//

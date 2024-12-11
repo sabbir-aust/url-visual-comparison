@@ -22,6 +22,7 @@ class VisualComparisonPage {
       console.log('Login page not detected, skipping login...');
     }
   }
+  //
 
   async takeScreenshot(url, screenshotPath) {
     await this.page.goto(url);
